@@ -15,15 +15,26 @@
   border: 1px solid black;
   display: flex;
   padding: 5px;
+  line-height: 29px;
+  align-items: center;
 
   img{
     margin-right: 5px;
+    height: 24px;
+  }
+
+  p{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
   }
 
   .searchInput{
       border: none;
-      font-size: 18px;
-      flex: 1;
+      font-size: 100%;
+      flex: 1 1;
+      height: 24px;
+      font-weight: 700;
       &:focus{
         outline: none; 
       }
@@ -48,23 +59,24 @@
     p{
       font-size: 18px;
     }
-
-    .searchResult__mask{
-      
-      
-      
+    
+    .searchResult__answer{
+      position: absolute;
+      font-size: 18px;
     }
+
+    .mask{
+      height: 25px;
+      position: absolute;
+      background-color: #2b7de9;
+    }
+
     .visible{
       visibility: visible;
     }
+
     .hidden{
-      background-color: #2b7de9;
-      color: #2b7de9;
-      height: 25px;
-      &::selection{
-        color: #2b7de9;
-        pointer-events: none;
-      }
+      visibility: hidden;
     }
   }
 }

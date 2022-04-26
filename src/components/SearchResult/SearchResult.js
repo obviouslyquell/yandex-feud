@@ -9,15 +9,20 @@ function SearchResult({content, answer}) {
     console.log(answer)
     const matched = hiddenPart.filter( el => answer.indexOf( el ) > -1 ); 
     
-    const classNames = `searchResult__mask active-mask ${matched.length>0?'visible':'hidden'}`
-
+    const textClassNames = `searchResult__answer  ${matched.length>0?'visible':'hidden'}`
+    const maskClassNames = `mask ${matched.length>0?'hidden':'visible'}`;
 
     //сделать маску z-index'om
   return (
     <li className="searchResult">
                 <img src="img/search.webp" alt="" className="searchResult__img" />
                 <p className="searchResult__text">{visiblePart.join(' ')} &nbsp;</p>
-                <div className={classNames} style={{width: `${maskWidth}px`}}>{hiddenPart.join(' ')}</div>
+                <div>
+                
+                <div className={textClassNames}>{hiddenPart.join(' ')}</div>
+                <div className={maskClassNames} style={{width: `${maskWidth}px`}}></div>  
+                </div>
+                
     </li>
   )
 }
